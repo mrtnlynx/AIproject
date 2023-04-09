@@ -39,16 +39,14 @@ html {
     margin-top: 2rem;
     height: 500px;
     border-radius: 5%;
-    position: relative;
-    left: -150rem;
+    opacity: 0;
     transition: all 0.7s;
-    animation: slide-from-left 2.5s ease-in-out forwards;
+    animation: fade-in 2.5s ease-in-out forwards;
     cursor: pointer;
 }
 
-@keyframes slide-from-left {
-    80% {left: 1.5rem;}
-    100% {left: 0}
+@keyframes fade-in {
+    100% {opacity: 1;}
 }
 
 .movie-poster-container img:hover {
@@ -159,4 +157,51 @@ footer ul li a {
 
 footer ul li a:hover {
     color: rgba(207, 200, 200, 0.829);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(87, 78, 78, 0.466);
+    z-index: 2;
+    top: 0;
+    left: 0;
+    text-align: center;
+}
+
+.modal-content {
+    background-color: #3c3f47;
+    margin: 5% auto;
+    padding: 5rem;
+    width: 700px;
+    height: 700px;
+    animation: zoom-in 1s;
+}
+
+@keyframes zoom-in {
+    0% {transform: scale(0);}
+    100% {transform: scale(1);}
+}
+
+.closeBtn {
+    float: right;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #fff;
+}
+
+.movie-poster-modal {
+    width: 300px;
+}
+
+.modal h1 {
+    margin: 1rem;
+    color: #fff;
+}
+
+.movie-poster {
+    width: 300px;
+    cursor: pointer;
 }
